@@ -1,11 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sidebar Navigation</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
+
 <body>
-  
+  <div id="page" class="site">
+    <div class="sidebar">
+
+      <div class="brand">
+        <div class="logo">
+          <a href="#"><span>web.</span>design</a>
+        </div>
+        <div class="toggle">
+          <i class="fas fa-bars" id="menu-toggle"></i>
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="#"><i class="fas fa-home"></i> <span>Dashboard</span></a></li>
+
+          <li>
+            <a href="#"><i class="fas fa-folder"></i> <span>Projects</span></a>
+            <ul class="submenu">
+              <li><a href="#">Goals</a></li>
+              <li><a href="#">Budgets</a></li>
+              <li><a href="#">Files</a></li>
+              <li><a href="#">Settings</a></li>
+              <li><a href="#">Fund</a></li>
+              <li><a href="#">Security</a></li>
+              <li><a href="#">Referrals</a></li>
+            </ul>
+          </li>
+
+          <li><a href="#"><i class="fas fa-bullhorn"></i> <span>Campaign</span></a></li>
+          <li><a href="#"><i class="fas fa-chart-line"></i> <span>Performance</span></a></li>
+
+          <li>
+            <a href="#"><i class="fas fa-chart-pie"></i> <span>Analytics</span></a>
+            <ul class="submenu">
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">eCommerce</a></li>
+              <li><a href="#">Marketing</a></li>
+              <li><a href="#">Logistic</a></li>
+              <li><a href="#">Delivery</a></li>
+              <li><a href="#">Crypto</a></li>
+              <li><a href="#">Social</a></li>
+              <li><a href="#">Finance</a></li>
+              <li><a href="#">Referrals</a></li>
+            </ul>
+          </li>
+
+          <li><a href="#"><i class="fas fa-flag"></i> <span>Report</span></a></li>
+
+          <li>
+            <a href="#"><i class="fas fa-envelope"></i> <span>Message</span></a>
+            <ul class="submenu">
+              <li><a href="#">Inbox</a></li>
+              <li><a href="#">Sent</a></li>
+              <li><a href="#">Starred</a></li>
+              <li><a href="#">Important</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="#"><i class="fas fa-user"></i> <span>Account</span></a>
+            <ul class="submenu">
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Settings</a></li>
+              <li><a href="#">Security</a></li>
+              <li><a href="#">Referrals</a></li>
+            </ul>
+          </li>
+
+          <li><a href="#"><i class="fas fa-credit-card"></i> <span>Subscription</span></a></li>
+          <li><a href="#"><i class="fas fa-cog"></i> <span>Configuration</span></a></li>
+          <li><a href="#"><i class="fas fa-question-circle"></i> <span>Help & Setting</span></a></li>
+        </ul>
+      </nav>
+
+    </div> <!-- .sidebar -->
+  </div> <!-- #page -->
+
+  <script>
+    const toggleButton = document.querySelector('.toggle i'); // your toggle icon
+    const sidebar = document.querySelector('.sidebar');
+    const nav = document.querySelector('nav');
+
+    toggleButton.addEventListener('click', () => {
+      sidebar.classList.toggle('collapsed');
+
+      if (sidebar.classList.contains('collapsed')) {
+        nav.style.overflow = 'hidden';  // Disable scroll when collapsed
+      } else {
+        nav.style.overflowY = 'auto';    // Enable scroll when expanded
+      }
+    });
+
+  </script>
 </body>
+
 </html>
